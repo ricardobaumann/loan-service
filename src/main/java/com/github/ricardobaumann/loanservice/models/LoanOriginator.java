@@ -32,4 +32,12 @@ public class LoanOriginator {
     public void setName(String name) {
         this.name = name;
     }
+
+    public LoanOriginator() {
+    }
+
+    public LoanOriginator(long id, @NotNull String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

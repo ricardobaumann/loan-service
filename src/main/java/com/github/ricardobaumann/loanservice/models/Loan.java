@@ -3,7 +3,6 @@ package com.github.ricardobaumann.loanservice.models;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -18,7 +17,6 @@ public class Loan {
     }
 
     @Id
-    @GeneratedValue
     private Long id;
 
     @NotNull
@@ -71,6 +69,15 @@ public class Loan {
     }
 
     public void setLoanOriginator(LoanOriginator loanOriginator) {
+        this.loanOriginator = loanOriginator;
+    }
+
+    public Loan() {
+    }
+
+    public Loan(Long id, @NotNull BigDecimal totalAmount, @NotNull LoanOriginator loanOriginator) {
+        this.id = id;
+        this.totalAmount = totalAmount;
         this.loanOriginator = loanOriginator;
     }
 }
