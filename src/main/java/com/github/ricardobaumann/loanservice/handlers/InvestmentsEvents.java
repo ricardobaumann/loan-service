@@ -1,15 +1,21 @@
 package com.github.ricardobaumann.loanservice.handlers;
 
+import com.github.ricardobaumann.loanservice.AuthenticationService;
 import com.github.ricardobaumann.loanservice.models.Investment;
 
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.Optional;
 
 @RepositoryEventHandler(Investment.class)
 public class InvestmentsEvents {
+
+    private final AuthenticationService authenticationService;
+
+    public InvestmentsEvents(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
 
     /*
     {
@@ -21,7 +27,7 @@ public class InvestmentsEvents {
      */
     @HandleBeforeCreate
     void handleBeforeSave(Investment investment) {
-        Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication())
+        Optional.ofNullable(authenticationService.getCurrentUser())
                 .ifPresent(authentication -> investment.setOwner(authentication.getName()));
     }
 
