@@ -1,7 +1,7 @@
 package com.github.ricardobaumann.loanservice.handlers;
 
-import com.github.ricardobaumann.loanservice.AuthenticationService;
 import com.github.ricardobaumann.loanservice.models.Investment;
+import com.github.ricardobaumann.loanservice.services.AuthenticationService;
 
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;

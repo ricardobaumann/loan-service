@@ -1,4 +1,4 @@
-package com.github.ricardobaumann.loanservice;
+package com.github.ricardobaumann.loanservice.services;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
