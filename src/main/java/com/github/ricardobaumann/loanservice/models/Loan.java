@@ -1,5 +1,7 @@
 package com.github.ricardobaumann.loanservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
@@ -28,8 +30,8 @@ public class Loan {
     @NotNull
     private Status status = Status.CREATED;
 
-    @NotNull
     @ManyToOne
+    @JsonIgnore
     private LoanOriginator loanOriginator;
 
     public Long getId() {
