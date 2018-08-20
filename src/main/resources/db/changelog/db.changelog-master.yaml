@@ -60,3 +60,33 @@ databaseChangeLog:
                 - column:
                     name: loan_originator_id
                     type: integer
+
+  - changeSet:
+        id: 4
+        author: me
+        changes:
+          - createTable:
+              tableName: investments
+              columns:
+                - column:
+                    name: id
+                    type: integer
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: owner
+                    type: varchar(200)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: loan_originator_id
+                    type: integer
+                    constraints:
+                      nullable: false
+                - column:
+                    name: amount
+                    type: decimal(13,3)
+                    constraints:
+                      nullable: false
