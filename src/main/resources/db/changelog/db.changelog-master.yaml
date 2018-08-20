@@ -15,12 +15,12 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: totalAmount
+                  name: total_amount
                   type: decimal(13,3)
                   constraints:
                     nullable: false
               - column:
-                  name: usedAmount
+                  name: used_amount
                   type: decimal(13,3)
                   constraints:
                     nullable: false
@@ -49,3 +49,14 @@ databaseChangeLog:
                   type: varchar(200)
                   constraints:
                     nullable: false
+
+  - changeSet:
+        id: 3
+        author: me
+        changes:
+          - addColumn:
+              tableName: loans
+              columns:
+                - column:
+                    name: loan_originator_id
+                    type: integer

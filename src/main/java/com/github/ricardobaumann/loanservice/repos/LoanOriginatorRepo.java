@@ -1,4 +1,4 @@
-package com.github.ricardobaumann.loanservice;
+package com.github.ricardobaumann.loanservice.repos;
 
 import com.github.ricardobaumann.loanservice.models.LoanOriginator;
 
