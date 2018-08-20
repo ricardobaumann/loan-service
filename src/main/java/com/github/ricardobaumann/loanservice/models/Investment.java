@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "investments")
@@ -19,12 +20,12 @@ public class Investment {
 
     private String owner;
 
-    //@NotNull
+    @NotNull
     @ManyToOne
     @RestResource
     private LoanOriginator loanOriginator;
 
-    //@NotNull
+    @NotNull
     @DecimalMin("0.1")
     private BigDecimal amount;
 
