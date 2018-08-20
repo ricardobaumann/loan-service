@@ -1,0 +1,51 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: me
+      changes:
+        - createTable:
+            tableName: loans
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: totalAmount
+                  type: decimal(13,3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: usedAmount
+                  type: decimal(13,3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(15)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: me
+      changes:
+        - createTable:
+            tableName: loan_originators
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
