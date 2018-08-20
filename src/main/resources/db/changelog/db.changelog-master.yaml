@@ -29,6 +29,32 @@ databaseChangeLog:
                   type: varchar(15)
                   constraints:
                     nullable: false
+              - column:
+                  name: interest
+                  type: decimal(13,3)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
 
   - changeSet:
       id: 2
@@ -49,6 +75,32 @@ databaseChangeLog:
                   type: varchar(200)
                   constraints:
                     nullable: false
+              - column:
+                    name: created_at
+                    type: datetime
+                    constraints:
+                      nullable: false
+
+               - column:
+                    name: created_at
+                    type: datetime
+                    constraints:
+                      nullable: false
+                - column:
+                    name: created_by
+                    type: varchar(200)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: updated_at
+                    type: datetime
+                    constraints:
+                      nullable: false
+                - column:
+                    name: updated_by
+                    type: varchar(200)
+                    constraints:
+                      nullable: false
 
   - changeSet:
         id: 3
@@ -81,7 +133,7 @@ databaseChangeLog:
                     constraints:
                       nullable: false
                 - column:
-                    name: loan_originator_id
+                    name: loan_id
                     type: integer
                     constraints:
                       nullable: false
@@ -90,3 +142,31 @@ databaseChangeLog:
                     type: decimal(13,3)
                     constraints:
                       nullable: false
+                - column:
+                    name: status
+                    type: varchar(30)
+                    constraints:
+                      nullable: false
+
+
+                - column:
+                     name: created_at
+                     type: datetime
+                     constraints:
+                       nullable: false
+                 - column:
+                     name: created_by
+                     type: varchar(200)
+                     constraints:
+                       nullable: false
+                 - column:
+                     name: updated_at
+                     type: datetime
+                     constraints:
+                       nullable: false
+                 - column:
+                     name: updated_by
+                     type: varchar(200)
+                     constraints:
+                       nullable: false
+

@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "loans")
-public class Loan {
+public class Loan extends Auditable {
 
     public enum Status {
         CREATED, FINISHED
@@ -33,6 +33,9 @@ public class Loan {
     @ManyToOne
     @JsonIgnore
     private LoanOriginator loanOriginator;
+
+    @NotNull
+    private BigDecimal interest;
 
     public Long getId() {
         return id;
@@ -72,6 +75,14 @@ public class Loan {
 
     public void setLoanOriginator(LoanOriginator loanOriginator) {
         this.loanOriginator = loanOriginator;
+    }
+
+    public BigDecimal getInterest() {
+        return interest;
+    }
+
+    public void setInterest(BigDecimal interest) {
+        this.interest = interest;
     }
 
     public Loan() {

@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "investments")
-public class Investment {
+public class Investment extends Auditable {
 
     @Id
     private Long id;
@@ -23,7 +23,7 @@ public class Investment {
     @NotNull
     @ManyToOne
     @RestResource
-    private LoanOriginator loanOriginator;
+    private Loan loan;
 
     @NotNull
     @DecimalMin("0.1")
@@ -45,12 +45,12 @@ public class Investment {
         this.owner = owner;
     }
 
-    public LoanOriginator getLoanOriginator() {
-        return loanOriginator;
+    public Loan getLoan() {
+        return loan;
     }
 
-    public void setLoanOriginator(LoanOriginator loanOriginator) {
-        this.loanOriginator = loanOriginator;
+    public void setLoan(Loan loan) {
+        this.loan = loan;
     }
 
     public BigDecimal getAmount() {

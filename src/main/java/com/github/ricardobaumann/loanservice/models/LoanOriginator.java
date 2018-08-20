@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "loan_originators",
         uniqueConstraints = @UniqueConstraint(name = "uk_loan_originator_name", columnNames = "name"))
-public class LoanOriginator {
+public class LoanOriginator extends Auditable {
 
     @Id
     private long id;
