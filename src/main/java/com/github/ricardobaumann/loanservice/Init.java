@@ -28,7 +28,7 @@ public class Init implements CommandLineRunner {
         loanOriginatorRepo.save(firstLoanOriginator);
         loanOriginatorRepo.save(secondLoanOriginator);
 
-        loanRepo.save(new Loan(1L, new BigDecimal(100.0), firstLoanOriginator));
-        loanRepo.save(new Loan(2L, new BigDecimal(200.0), secondLoanOriginator));
+        loanRepo.save(new Loan(1L, new BigDecimal(100.0), firstLoanOriginator, new BigDecimal(3.0)));
+        loanRepo.save(new Loan(2L, new BigDecimal(200.0), secondLoanOriginator, new BigDecimal(5.0)));
     }
 }

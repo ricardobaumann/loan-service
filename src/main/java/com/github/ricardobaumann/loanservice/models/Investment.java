@@ -15,10 +15,16 @@ import javax.validation.constraints.NotNull;
 @Table(name = "investments")
 public class Investment extends Auditable {
 
+    public enum Status {
+        CREATED, PAYED;
+    }
+
     @Id
     private Long id;
 
     private String owner;
+
+    private Status status = Status.CREATED;
 
     @NotNull
     @ManyToOne
@@ -61,4 +67,12 @@ public class Investment extends Auditable {
         this.amount = amount;
     }
 
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

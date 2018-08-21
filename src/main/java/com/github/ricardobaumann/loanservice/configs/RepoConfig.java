@@ -29,7 +29,7 @@ public class RepoConfig {
     }
 
     @Bean
-    AuditorAware auditorAware(AuthenticationService authenticationService) {
+    AuditorAware<String> auditorAware(AuthenticationService authenticationService) {
         return () -> Optional.ofNullable(authenticationService.getCurrentUser())
                 .map(Principal::getName);
     }

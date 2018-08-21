@@ -88,9 +88,10 @@ public class Loan extends Auditable {
     public Loan() {
     }
 
-    public Loan(Long id, @NotNull BigDecimal totalAmount, @NotNull LoanOriginator loanOriginator) {
+    public Loan(Long id, @NotNull BigDecimal totalAmount, LoanOriginator loanOriginator, @NotNull BigDecimal interest) {
         this.id = id;
         this.totalAmount = totalAmount;
         this.loanOriginator = loanOriginator;
+        this.interest = interest;
     }
 }
