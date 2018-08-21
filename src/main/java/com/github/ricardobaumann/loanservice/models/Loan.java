@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -28,6 +30,7 @@ public class Loan extends Auditable {
     private BigDecimal usedAmount = BigDecimal.ZERO;
 
     @NotNull
+    @Enumerated(value = EnumType.STRING)
     private Status status = Status.CREATED;
 
     @ManyToOne

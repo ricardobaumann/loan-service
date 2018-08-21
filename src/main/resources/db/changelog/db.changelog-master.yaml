@@ -118,6 +118,9 @@ databaseChangeLog:
                     constraints:
                       nullable: false
                 - column:
+                    name: payed_amount
+                    type: decimal(13,3)
+                - column:
                     name: status
                     type: varchar(30)
                     constraints:
