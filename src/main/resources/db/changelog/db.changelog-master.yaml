@@ -10,10 +10,6 @@ databaseChangeLog:
               - column:
                   name: id
                   type: integer
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
               - column:
                   name: total_amount
                   type: decimal(13,3)
@@ -141,3 +137,40 @@ databaseChangeLog:
                      name: updated_by
                      type: varchar(200)
 
+  - changeSet:
+      id: 5
+      author: me
+      changes:
+        - insert:
+            tableName: loan_originators
+            columns:
+            - column:
+                name: id
+                value: 1
+            - column:
+                name: name
+                value: "first loan originator"
+        - insert:
+            tableName: loans
+            columns:
+            - column:
+                name: id
+                value: 1
+            - column:
+                name: total_amount
+                value: 100
+            - column:
+                name: used_amount
+                value: 0
+            - column:
+                name: status
+                value: "CREATED"
+            - column:
+                name: used_amount
+                value: 0
+            - column:
+                name: loan_originator_id
+                value: 1
+            - column:
+                name: interest
+                value: 5.0

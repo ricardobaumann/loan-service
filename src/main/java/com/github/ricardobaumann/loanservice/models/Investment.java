@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Investment extends Auditable {
 
     public enum Status {
-        CREATED, PAYED;
+        CREATED, PAYED
     }
 
     @Id
@@ -34,6 +34,9 @@ public class Investment extends Auditable {
     @NotNull
     @DecimalMin("0.1")
     private BigDecimal amount;
+
+    @NotNull
+    private BigDecimal payedAmount = BigDecimal.ZERO;
 
     public Long getId() {
         return id;
@@ -74,5 +77,13 @@ public class Investment extends Auditable {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public BigDecimal getPayedAmount() {
+        return payedAmount;
+    }
+
+    public void setPayedAmount(BigDecimal payedAmount) {
+        this.payedAmount = payedAmount;
     }
 }
